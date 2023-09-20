@@ -98,7 +98,7 @@ jobs:
       - name : Preparing cluster for deploy
 ## Commands that setup the cluster as per my project needs
         run: |
-          kubectl apply -f devops1/
+          kubectl apply -f devops/
           sleep 20
       - run: |
           echo "ok"
