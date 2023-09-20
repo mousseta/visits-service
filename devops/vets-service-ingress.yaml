@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vets-service-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+  labels:
+    app: vets-service
+spec:
+    ingressClassName: alb
+    rules:
+    -  http:
+        paths:
+        - pathType: ImplementationSpecific
+          path: /api/vet(/|$)(.*)
+          backend:
+            service:
+              name: vets-service
+              port:
+                number: 8082
