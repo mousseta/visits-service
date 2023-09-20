@@ -9,6 +9,5 @@ spec:
     - name: "8083"
       port: 8082
       targetPort: 8082
-      protocol: TCP
   selector:
     app: vets-service

@@ -1,26 +1,16 @@
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-    name: api-gateway-ingress
-    annotations:
-        alb.ingress.kubernetes.io/scheme: internet-facing
-        alb.ingress.kubernetes.io/target-type: instance
+  name: api-gateway-ingress
 spec:
-  ingressClassName: alb
   rules:
-    - http:
+    - host: hello-world1.info
+      http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: api-gateway
-                port:
-                  number: 8080
-
-
-
-
-
-
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service: 
+              name: api-gateway
+              port:
+                number: 8080

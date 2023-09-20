@@ -16,7 +16,7 @@ spec:
         app: config-server
     spec:
       containers:
-        - image: mousse2025/config-server:latest
+        - image: mousse2025/config-server
           name: config-server
           ports:
             - containerPort: 8888

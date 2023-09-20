@@ -15,7 +15,7 @@ spec:
         app: admin-server
     spec:
       containers:
-        - image: mousse2025/admin-server:latest
+        - image: mousse2025/admin-server
           name: admin-server
           ports:
             - containerPort: 9090
@@ -24,7 +24,7 @@ spec:
               memory: "536870912"
       initContainers:
       - name: init-discovery-server
-        image: busybox:latest
+        image: busybox
         command: ['sh', '-c', 'until nc -z discovery-server:8761; do echo waiting for discovery-server; sleep 2; done;']
       restartPolicy: Always
 

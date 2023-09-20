@@ -19,7 +19,7 @@ spec:
         - env:
             - name: JAVA_OPTS
               value: -XX:+UnlockExperimentalVMOptions -Djava.security.egd=file:/dev/./urandom
-          image: openzipkin/zipkin:latest
+          image: openzipkin/zipkin
           name: tracing-server
           ports:
             - containerPort: 9411
@@ -28,8 +28,7 @@ spec:
               memory: "536870912"
       initContainers:
       - name: init-discovery-server
-        image: busybox:latest
+        image: busybox
         command: ['sh', '-c', 'until nc -z discovery-server:8761; do echo waiting for discovery-server; sleep 2; done;']
       restartPolicy: Always
-      
 
