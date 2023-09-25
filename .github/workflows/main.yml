@@ -76,6 +76,9 @@ jobs:
       
       - name: Run package
         run: mvn package
+
+      - name: Test cimage
+        run: chmod +x script.sh && ./script.sh
       
       - name: Build and push
         uses: docker/build-push-action@v4
