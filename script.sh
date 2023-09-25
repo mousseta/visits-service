@@ -1,4 +1,4 @@
-- docker rm db || true
+docker rm db || true
             docker rm -f clair || true
             docker run -d --name db arminc/clair-db
             sleep 15 
