@@ -94,7 +94,7 @@ jobs:
 ## Commands that setup the cluster as per my project needs
         run: |
           kubectl apply -f devops/
-          sleep 20
+          sleep 60
       - run: |
           echo "ok"
       
