@@ -83,7 +83,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: registry.dev.svc.cluster.local/config-server:latest
+          tags: registry.dev.svc.cluster.local:5000/config-server:latest
 
   Test-on-cluster:
     runs-on: self-hosted
