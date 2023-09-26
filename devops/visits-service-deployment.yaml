@@ -15,7 +15,7 @@ spec:
         app: visits-service
     spec:
       containers:
-        - image: registry.dev.svc.cluster.local:5000/visits-service
+        - image: mousse2025/visits-service
           name: visits-service
           ports:
             - containerPort: 8083
