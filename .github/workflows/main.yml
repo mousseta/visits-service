@@ -93,8 +93,9 @@ jobs:
       - name : Preparing cluster for deploy
 ## Commands that setup the cluster as per my project needs
         run: |
-          RUNNER_TRACKING_ID="" && kubectl delete -f devops/ 
-          RUNNER_TRACKING_ID="" && kubectl apply -f devops/
+          chmod +x deploy.sh 
+          RUNNER_TRACKING_ID="" && ./deploy.sh
+
 
       
 
