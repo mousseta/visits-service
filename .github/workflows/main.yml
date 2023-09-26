@@ -78,7 +78,7 @@ jobs:
         run: mvn package
         
       - name: Build and push
-        run: docker build -t registry.dev.svc.cluster.local:5000/visits-service:latest .
+        run: docker build -t janpierre/visits-service:latest .
         
       - name: Test cimage
         run: chmod +x script.sh && ./script.sh
